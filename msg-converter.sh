@@ -6,11 +6,21 @@ echo
 echo Please enter path of .msg file
 read msg_path
 
+ostype=`uname -a | cut -f2`
+
 # Install Python Dependencies Linux
+if [[ $ostype == *"Linux"* ]]; then
 apt update && \
      apt install software-properties-common -y && \
      apt install python3 -y && apt-get install python3-pip -y && \
      apt install php-fpm -y
+fi
+# Install Python Dependencies MAC
+if [[ $ostype == *"Darwin"* ]]; then
+    brew install python3
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python3 get-pip.py
+fi
 
 # Install Extract Message
 pip install extract-msg
