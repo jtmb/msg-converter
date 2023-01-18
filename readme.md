@@ -4,9 +4,12 @@ This script installs python and converts outlook .msg files to a readable HTML f
 
 
 # HOW TO RUN:
-
-.msg-converter.sh 
+double click msg-converter.command
 
 OR
 
-bash msg-converter.sh
+.msg-converter.command
+
+OR
+
+bash msg-converter.command
