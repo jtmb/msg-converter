@@ -1,0 +1,25 @@
+FROM nginx
+
+# set work directory (for file sharing between host and container)
+WORKDIR /usr/share/nginx/html
+RUN rm index.html
+COPY /app/index.html /usr/share/nginx/html/index.html
+COPY /app/upload.php /usr/share/nginx/html/upload.php
+COPY /app/uploads /usr/share/nginx/html/uploads/
+
+#NGINX Configs
+COPY /configs/nginx.conf /etc/nginx/nginx.conf
+COPY /configs/conf.d/default.conf /etc/nginx/conf.d/default.conf
+
+
+# Dependencies 
+RUN apt update && apt install software-properties-common -y && apt install python3 -y && apt-get install python3-pip -y && \
+    apt install php-fpm -y
+
+
+# NGNIX stuff
+# RUN echo "client_max_body_size 2M;" >> /etc/nginx/nginx.conf
+
+# APP
+RUN pip install extract-msg
+# RUN python3 -m extract_msg /usr/share/nginx/html/test.msg
