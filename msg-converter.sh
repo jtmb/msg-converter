@@ -6,14 +6,13 @@ echo
 echo Please enter path of .msg file
 read msg_path
 
+# Create OS type VAR (linux or mac)
 ostype=`uname -a | cut -f2`
 
 # Install Python Dependencies Linux
 if [[ $ostype == *"Linux"* ]]; then
-apt update && \
-     apt install software-properties-common -y && \
-     apt install python3 -y && apt-get install python3-pip -y && \
-     apt install php-fpm -y
+    apt update && \
+     apt install python3 -y && apt-get install python3-pip -y
 fi
 # Install Python Dependencies MAC
 if [[ $ostype == *"Darwin"* ]]; then
@@ -31,5 +30,25 @@ python3 -m extract_msg $msg_path --out ./converted-messages/ --prepared-html --u
 # Create Var based off file name 
 msg_name=`echo $msg_path | rev | cut -d '/' -f1 | rev | cut -d '.' -f1`
 
-# Open file
-open ./converted-messages/$msg_name/message.html
+# Open file Linux WSL
+if [[ $ostype == *"Linux"* ]]; then
+    wslview ./converted-messages/$msg_name/message.html
+fi
+
+# Open file MAC
+if [[ $ostype == *"Darwin"* ]]; then
+    open ./converted-messages/$msg_name/message.html
+fi
+
+# Set Echo message
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+echo
+echo
+echo -e "/////////////////////////////////////////////////////////////////////////////"
+echo -e "// Your file is located here: $RED./converted-messages/$msg_name/message.html $NC     //" 
+echo -e "///////////////////////////////////////////////////////////////////////////"
+echo
+echo
+echo "Script Complete."
