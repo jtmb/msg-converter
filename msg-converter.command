@@ -3,7 +3,7 @@ clear
 
 echo Welcome to the MSG File converter
 echo
-echo Please enter path of .msg file
+echo Please enter path of .msg file or drag and drop .msg file into this window.
 read msg_path
 
 # Create OS type VAR (linux or mac)
