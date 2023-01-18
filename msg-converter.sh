@@ -11,8 +11,8 @@ ostype=`uname -a | cut -f2`
 
 # Install Python Dependencies Linux
 if [[ $ostype == *"Linux"* ]]; then
-    apt update && \
-     apt install python3 -y && apt-get install python3-pip -y
+   sudo apt update && \
+     sudo apt install python3 -y && sudo apt-get install python3-pip -y
 fi
 # Install Python Dependencies MAC
 if [[ $ostype == *"Darwin"* ]]; then
@@ -39,6 +39,9 @@ fi
 if [[ $ostype == *"Darwin"* ]]; then
     open ./converted-messages/$msg_name/message.html
 fi
+
+# Cleanup
+rm ./get-pip.py
 
 # Set Echo message
 RED='\033[0;31m'
