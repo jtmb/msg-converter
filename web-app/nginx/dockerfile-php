@@ -4,4 +4,4 @@ FROM php:fpm-alpine
 RUN apk add py3-pip
 RUN pip install extract-msg
 # RUN adduser root www-data && chown -R www-data:www-data /var/www && chmod -R g+rwX /var/www
-# ENTRYPOINT adduser root www-data && chown -R www-data:www-data /var/www && chmod -R g+rwX /var/www
+CMD adduser root www-data && chown -R www-data:www-data /var/www && chmod -R g+rwX /var/www 
