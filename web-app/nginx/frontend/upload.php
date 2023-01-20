@@ -30,8 +30,9 @@ if ($uploadOk == 0) {
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-    $output = shell_exec('python3 -m extract_msg /var/www/html/uploads/$target_file --out ./converted-messages/ --prepared-html --use-filename --html ');
-    echo file_get_contents( "/var/www/html/converted-messages/$target_file/message.html" ); // get the contents, and echo it out.
+    $name = shell_exec('echo '.escapeshellarg($target_file).' | cut -d '.' -f1');
+    $output = shell_exec('python3 -m extract_msg /var/www/html/uploads/'.escapeshellarg($target_file).' --out ./converted-messages/ --prepared-html --use-filename --html ');
+    echo file_get_contents( "/var/www/html/converted-messages/$name/message.html" ); // get the contents, and echo it out.
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
