@@ -2,17 +2,3 @@ FROM nginx:alpine
 
 # Copy configs onto webserver
 ADD default.conf /etc/nginx/conf.d
-
-# # Copy HTML frontend to websever
-# ADD frontend/index.php /var/www/html/index.php
-# ADD frontend/upload.php /var/www/html/upload.php
-# ADD frontend/uploads /var/www/html/uploads
-# ADD frontend/msg-preview.php /var/www/html/msg-preview.php
-# ADD frontend/converted-messages /var/www/html/converted-messages
-
-# # Install Python Dependencies
-# RUN apk add py3-pip
-# RUN pip install extract-msg
-
-
-# RUN chmod -R 0755 /var/www/html/upload.php

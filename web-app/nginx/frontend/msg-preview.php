@@ -8,5 +8,5 @@
 <p>MSG Prewview:</p>
 <hr>
 <?php
-    echo file_get_contents( "/home/james/repos/msg-converter/web-app/nginx/frontend/converted-messages/test/message.html" ); // get the contents, and echo it out.
+    echo file_get_contents( "/home/james/repos/msg-converter/web-app/nginx/frontend/converted-messages/test/$target_file" ); // get the contents, and echo it out.
 ?>

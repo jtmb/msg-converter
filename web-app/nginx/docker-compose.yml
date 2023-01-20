@@ -9,13 +9,16 @@ services:
     networks:
       - internal
     volumes:
-    - /home/james/repos/msg-converter/web-app/nginx/frontend:/var/www/html
+    - /home/james/repos/msg-converter/web-app/nginx/frontend/:/var/www/html/
   php:
+    build:
+      context: .
+      dockerfile: dockerfile-php
     image: php:fpm-alpine
     networks:
       - internal
     volumes:
-    - /home/james/repos/msg-converter/web-app/nginx/frontend:/var/www/html
+    - /home/james/repos/msg-converter/web-app/nginx/frontend/:/var/www/html/
 networks:
   internal:
     driver: bridge
