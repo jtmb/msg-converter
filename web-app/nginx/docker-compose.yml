@@ -1,0 +1,22 @@
+version: "3"
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports: 
+      - "8080:80"
+    networks:
+      - internal
+    volumes:
+    - /home/james/repos/msg-converter/web-app/nginx/frontend:/var/www/html
+  php:
+    image: php:fpm-alpine
+    networks:
+      - internal
+    volumes:
+    - /home/james/repos/msg-converter/web-app/nginx/frontend:/var/www/html
+    # command: chown root /var/www/html/upload.php && chmod 755 /var/www/html/upload.php
+networks:
+  internal:
+    driver: bridge
