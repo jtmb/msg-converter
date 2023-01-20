@@ -3,7 +3,6 @@ $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-$name = trim($target_file,".msg!");
 
 // Check if file already exists
 if (file_exists($target_file)) {
@@ -32,6 +31,7 @@ if ($uploadOk == 0) {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
     $output = shell_exec('python3 -m extract_msg /var/www/html/uploads/'.escapeshellarg($target_file).' --out ./converted-messages/ --prepared-html --use-filename --html ');
+    $name = trim($target_file,".msg!");
     echo file_get_contents( "/var/www/html/converted-messages/$name/message.html" ); // get the contents, and echo it out.
   } else {
     echo "Sorry, there was an error uploading your file.";
