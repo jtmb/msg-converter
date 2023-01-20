@@ -16,10 +16,6 @@ services:
       - internal
     volumes:
     - /home/james/repos/msg-converter/web-app/nginx/frontend:/var/www/html
-    command: sh "echo "baeldung" && echo "docker" "
-    # "adduser root www-data"
-      # chown -R www-data:www-data /var/www && 
-      # chmod -R g+rwX /var/www"
 networks:
   internal:
     driver: bridge
