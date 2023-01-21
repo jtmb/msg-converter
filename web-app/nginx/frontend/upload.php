@@ -37,7 +37,7 @@ if ($uploadOk == 0) {
     shell_exec('rm -rfv /var/www/html/converted-messages/'.escapeshellarg($name).'/ ');
     shell_exec('rm -rfv /var/www/html/'.escapeshellarg($target_file).'/ ');
     // make logs of files converted
-    shell_exec('echo "'.escapeshellarg($target_file).' | '.escapeshellarg($_SERVER['REMOTE_ADDR']).'" >> logs/logs.out');
+    shell_exec('currentDate=`date` && echo "'.escapeshellarg($target_file).' | '.escapeshellarg($_SERVER['REMOTE_ADDR']).' | $currentDate" >> logs/logs.out');
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
