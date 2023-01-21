@@ -9,7 +9,7 @@ services:
     networks:
       - internal
     volumes:
-    - /frontend/:/var/www/html/
+    - ./frontend/:/var/www/html/
   php:
     build:
       context: .
@@ -18,7 +18,7 @@ services:
     networks:
       - internal
     volumes:
-    - /frontend/:/var/www/html/
+    - ./frontend/:/var/www/html/
 networks:
   internal:
     driver: bridge
