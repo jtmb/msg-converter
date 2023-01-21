@@ -1,0 +1,4 @@
+#!/bin/sh
+adduser root www-data && chown -R www-data:www-data /var/www && chmod -R g+rwX /var/www
+
+/bin/sh
