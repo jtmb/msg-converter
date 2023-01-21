@@ -12,4 +12,3 @@ RUN chmod u+x /usr/local/bin/entrypoint
 # ENTRYPOINT ["php-fpm"]
  CMD ["php-fpm"]
 # ENTRYPOINT ["/usr/local/bin/entrypoint"]
-RUN v
