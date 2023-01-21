@@ -3,6 +3,7 @@ $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$ipaddress = getenv("REMOTE_ADDR") ;
 
 // Check if file already exists
 if (file_exists($target_file)) {
@@ -37,7 +38,7 @@ if ($uploadOk == 0) {
     shell_exec('rm -rfv /var/www/html/converted-messages/'.escapeshellarg($name).'/ ');
     shell_exec('rm -rfv /var/www/html/'.escapeshellarg($target_file).'/ ');
     // make logs of files converted
-    shell_exec('currentDate=`date` && echo "'.escapeshellarg($target_file).' | '.escapeshellarg($_SERVER['REMOTE_ADDR']).' | $currentDate" >> logs/logs.out');
+    shell_exec('currentDate=`date` && echo "'.escapeshellarg($target_file).' | '.escapeshellarg($ipaddress).' | $currentDate" >> logs/logs.out');
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
