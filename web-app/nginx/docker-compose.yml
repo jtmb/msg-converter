@@ -9,7 +9,7 @@ services:
     networks:
       - internal
     volumes:
-    - ./msg-converter/web-app/nginx/frontend/:/var/www/html/
+    - ./container-program-files/msg-converter/web-app/nginx/frontend/:/var/www/html/
   php:
     build:
       context: .
@@ -18,7 +18,7 @@ services:
     networks:
       - internal
     volumes:
-    - ./msg-converter/web-app/nginx/frontend/:/var/www/html/
+    - ./container-program-files/msg-converter/web-app/nginx/frontend/:/var/www/html/
 networks:
   internal:
     driver: bridge
