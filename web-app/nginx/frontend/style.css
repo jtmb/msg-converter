@@ -44,6 +44,10 @@ html {
     font-family:monospace;
     }
     
+    h2 {
+      font-family:monospace;
+      }
+
     @keyframes slide {
     0% {
     transform:translateX(-25%);
@@ -54,12 +58,14 @@ html {
     }
     }
 
-    .actions-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50px;
+    .submit-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 0px;
+      width: 100%;
       }
+
       h1 {
         display: flex;
         justify-content: center;
@@ -68,38 +74,52 @@ html {
         font-size: 60px
       }
 
+      h2 {
+        float: left;
+        display: block;
+        color: #0e0d0d;
+        text-align: center;
+        padding: 30px 100px;
+        text-decoration: none;
+        font-size: 22px;
+        background: rgb(226, 218, 218);
+        opacity: 0.8;
+        border-radius: 25px
+      }
+
+      body {
+        background: black;
+        height: 100%;
+        padding: 60px;
+      }
+
       .container {
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
         width: 100%;
       }
-/*       
-      input[type="file"] {
-        position: absolute;
-        z-index: -1;
-        top: 10px;
-        left: 8px;
-        font-size: 17px;
-        color: #b8b8b8;
-      } */
+
       input[type="submit"] {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        font-size: 17px;
-        z-index: -1;
-        color: #312c2c;
+        float: left;
+        display: block;
+        color: #0e0d0d;
+        padding: 30px 30px;
+        text-decoration: none;
+        font-size: 22px;
+        background: rgb(226, 218, 218);
+        opacity: 0.8;
+        border-radius: 22px
       }
       input[type="file"] {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        font-size: 17px;
-        z-index: -1;
-        color: #312c2c;
+        float: left;
+        display: block;
+        color: #0e0d0d;
+        padding: 0px 0px;
+        text-decoration: none;
+        font-size: 30px;
+        opacity: 0.8;
+        border-radius: 22px
       }
 
       .navbar {

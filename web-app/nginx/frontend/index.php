@@ -12,25 +12,16 @@
 
 <p></p>
 
-  <div class="center">
+
   <h1>.MSG to HTML file Converter</h1>
-  <div class="actions-box">
-  <form action="upload.php" method="post" enctype="multipart/form-data">
-  <p class="p3">Select file to upload:</p>
-    <p></p>
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <p></p>
-    <input type="submit" value="Upload & Convert File" name="submit">
+  <form action="upload.html" method="post" enctype="multipart/form-data">
+  <div class="submit-div"><input type="file" name="fileToUpload" id="fileToUpload"> <p></p><input type="submit" value="Upload & Convert File" name="submit"></div>
   </form>
-  </div>
 
-
-  </div>
 
   <div class="navbar">
-  <a href="#home" class="active">Home</a>
+  <a href="./index.php" class="active">Home</a>
   <a href="https://github.com/jtmb/msg-converter">Repo</a>
-  <a href="#contact">About</a>
-</div>
+  <a href="./about.html">About</a></div>
 </body>
 </html>
