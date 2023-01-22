@@ -1,6 +1,6 @@
 version: "3"
 services:
-  nginx:
+  msg-converter:
     build:
       context: .
       dockerfile: dockerfile
@@ -14,7 +14,6 @@ services:
     build:
       context: .
       dockerfile: dockerfile-php
-    image: php:fpm-alpine
     networks:
       - internal
     volumes:
