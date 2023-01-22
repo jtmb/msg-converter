@@ -7,8 +7,3 @@ RUN adduser root www-data && chown -R www-data:www-data /var/www && chmod -R g+r
 COPY entrypoint /usr/local/bin/entrypoint
 RUN chmod 755 /usr/local/bin/entrypoint
 RUN chmod u+x /usr/local/bin/entrypoint
-#  [/var/entrypoint.sh]
-# CMD ["adduser root www-data && chown -R www-data:www-data /var/www && chmod -R g+rwX /var/www"] 
-# ENTRYPOINT ["php-fpm"]
- CMD ["php-fpm"]
-# ENTRYPOINT ["/usr/local/bin/entrypoint"]
