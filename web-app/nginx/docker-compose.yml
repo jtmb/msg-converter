@@ -11,6 +11,7 @@ services:
       - internal
     volumes:
     - ./frontend/:/var/www/html/
+    
   php:
     build:
       context: .
@@ -23,3 +24,13 @@ services:
 networks:
   internal:
     driver: bridge
+
+  mariadb:
+    restart: unless-stopped
+    immage: mariadb:latest
+    environment:
+      MARIADB_ROOT_PASSWORD : "${db_pwd}"
+    networks:
+      - internal
+    volumes:
+    - ./frontend/:/var/www/html/
