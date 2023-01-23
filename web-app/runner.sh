@@ -3,8 +3,8 @@ db_pwd=`(tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo '')`
 echo "DB_PWD=$db_pwd" > nginx/.env
 
 # Build docker compose stack and set entry point script
-sudo docker compose -f "./nginx/docker-compose.yml" up -d --build
-sudo docker exec nginx-php-1 sh /usr/local/bin/entrypoint
+sudo docker compose -p "msg-converter" -f "./nginx/docker-compose.yml" up -d --build
+sudo docker exec msg-converter-php-1 sh /usr/local/bin/entrypoint
 
 # Show random generated db_pwd at the end of build
 echo
