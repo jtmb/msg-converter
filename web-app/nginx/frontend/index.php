@@ -20,7 +20,7 @@
 
 
   <div class="navbar">
-  <a href="./index.php" class="active">Home</a>
+  <a href="/" class="active">Home</a>
   <a href="https://github.com/jtmb/msg-converter">Repo</a>
   <a href="./about">About</a></div>
 </body>
