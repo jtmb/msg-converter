@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: dockerfile
+    restart: unless-stopped
     ports: 
       - "8081:80"
     networks:
@@ -14,7 +15,7 @@ services:
     build:
       context: .
       dockerfile: dockerfile-php
-    # image: php:fpm-alpine
+    restart: unless-stopped
     networks:
       - internal
     volumes:
