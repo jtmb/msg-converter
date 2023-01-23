@@ -22,6 +22,6 @@
   <div class="navbar">
   <a href="/" class="active">Home</a>
   <a href="https://github.com/jtmb/msg-converter">Repo</a>
-  <a href="./about">About</a></div>
+  <a href="/about.html">About</a></div>
 </body>
 </html>
