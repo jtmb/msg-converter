@@ -16,7 +16,7 @@ if (file_exists($target_file)) {
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 5000000) {
   echo "Sorry, your file is too large.";
-  header("Location: ./error/file_too_big.html");
+  header("Location: /var/www/html/error/file_too_big.html");
   $uploadOk = 0;
 }
 
