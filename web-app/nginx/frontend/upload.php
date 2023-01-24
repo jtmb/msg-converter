@@ -9,20 +9,20 @@ $seconds = 15;
 // Check if file already exists
 if (file_exists($target_file)) {
   echo "Sorry, file already exists.";
-  echo file_get_contents( "/var/www/html/errors/file_already_exists.html" );
+  echo file_get_contents( "/var/www/html/error/file_already_exists.html" );
   $uploadOk = 0;
 }
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 5000000) {
   echo "Sorry, your file is too large.";
-  echo file_get_contents( "/var/www/html/errors/file_too_big.html" );
+  echo file_get_contents( "/var/www/html/error/file_too_big.html" );
   $uploadOk = 0;
 }
 
 // Allow certain file formats
 if($FileType != "msg") {
-  echo file_get_contents( "/var/www/html/errors/wrong_file_type.html" );
+  echo file_get_contents( "/var/www/html/error/wrong_file_type.html" );
   $uploadOk = 0;
 }
 
