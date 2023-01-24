@@ -22,8 +22,7 @@ if ($_FILES["fileToUpload"]["size"] > 5000000) {
 
 // Allow certain file formats
 if($FileType != "msg") {
-  echo "Sorry, only .msg files are allowed.";
-  header("Location: ./error/wrong_file_type.html");
+  echo file_get_contents( "./errors/wrong_file_type.html" );
   $uploadOk = 0;
 }
 
