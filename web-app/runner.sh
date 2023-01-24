@@ -11,7 +11,7 @@ sudo docker exec msg-converter-php-1 sh /usr/local/bin/entrypoint
 # Show random generated db_pwd at the end of build
 echo
 echo "-----------------------"
-echo mariabd login info: 
+echo mariadb login info: 
 echo "user; root"
 echo "pwd; $db_pwd"
 echo "-----------------------"
