@@ -6,7 +6,7 @@ $FileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 $ipaddress = getenv("REMOTE_ADDR") ;
 $seconds = 15;
 
-// Check if file already exists
+// Check if file already exists or is empty
 if (file_exists($target_file)) {
   echo file_get_contents( "/var/www/html/error/file_already_exists.html" );
   $uploadOk = 0;
