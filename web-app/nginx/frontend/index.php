@@ -14,7 +14,7 @@
 
 
   <h1>.MSG to HTML file Converter</h1>
-  <form action="upload.php" method="post" enctype="multipart/form-data">
+  <form action="actions.php" method="post" enctype="multipart/form-data">
   <div class="submit-div"><input type="file" name="fileToUpload" id="fileToUpload"> <p></p><input type="submit" value="Upload & Convert File" name="submit"></div>
   </form>
 
