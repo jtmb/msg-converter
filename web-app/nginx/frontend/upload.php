@@ -1,5 +1,4 @@
 <?php
-echo file_get_contents( "/var/www/html/loader.php" );
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
