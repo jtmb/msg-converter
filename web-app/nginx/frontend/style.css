@@ -81,22 +81,10 @@ html {
         text-align: center;
         padding: 30px 100px;
         text-decoration: none;
-        font-size: 22px;
+        font-size: 30px;
         background: rgb(226, 218, 218);
         opacity: 0.8;
         border-radius: 25px
-      }
-      h3 {
-        float: none ;
-        display: block;
-        color: #0e0d0d;
-        text-align: center;
-        padding: 30px 100px;
-        text-decoration: none;
-        font-size: 22px;
-        background: rgb(226, 218, 218);
-        opacity: 0.8;
-        border-radius: 50px
       }
 
       body {
@@ -145,6 +133,7 @@ html {
     position: fixed;
     bottom: 0;
     width: 100%;
+    padding: 2px 5px;
   }
   
   /* Style the links inside the navigation bar */
@@ -153,9 +142,9 @@ html {
     display: block;
     color: #0e0d0d;
     text-align: center;
-    padding: 18px 20px;
+    padding: 15px 18px;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 30px;
   }
   
   /* Change the color of links on hover */
@@ -204,4 +193,23 @@ html {
   100% {
       transform: rotate(360deg);
   }
+}
+
+.about1 {
+  margin-bottom: 150px
+}
+.about2 {
+  margin-bottom: 150px
+}
+.about3 {
+  margin-top: 440px
+}
+.social {
+  position:absolute;
+  bottom:0;
+  right:0;
+  margin-right: 80px;
+}
+.fa {
+  border-radius: 50px;
 }
