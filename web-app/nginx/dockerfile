@@ -2,3 +2,5 @@ FROM nginx:alpine
 
 # Copy configs onto webserver
 ADD default.conf /etc/nginx/conf.d
+COPY entrypoint /usr/local/bin/entrypoint
+COPY frontend/ /var/www/html/

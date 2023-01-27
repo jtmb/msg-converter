@@ -1,31 +1,37 @@
 version: "3"
 services:
+
   nginx:
     build:
       context: .
       dockerfile: dockerfile
-    restart: unless-stopped
+    restart: always
     ports: 
       - "8081:80"
     networks:
       - internal
-    volumes:
-    - ./frontend/:/var/www/html/
+
+
   db:
-    image: mariadb
-    restart: always
+    image: mongo
+    restart: unless-stopped
+    ports: 
+      - "8082:8081"
+    networks:
+      - internal
     environment:
-      MARIADB_ROOT_PASSWORD : "${DB_PWD}"
+      ME_CONFIG_MONGODB_ADMINUSERNAME: "root"
+      ME_CONFIG_MONGODB_ADMINPASSWORD: "${DB_PWD}"
+      
 
   php:
     build:
       context: .
       dockerfile: dockerfile-php
-    restart: unless-stopped
+    restart: always
     networks:
       - internal
-    volumes:
-    - ./frontend/:/var/www/html/
+      
 networks:
   internal:
     driver: bridge
