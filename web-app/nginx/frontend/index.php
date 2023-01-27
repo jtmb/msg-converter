@@ -20,7 +20,7 @@
   <div class="submit-div"><input type="file" name="fileToUpload" id="fileToUpload"> <p></p>
   <input type="submit" value="Upload & Convert File" name="submit" id="search-button"></div>
   </form>
-<script src="/loading.js"></script>
+<script src="/js/loading.js"></script>
   
   <div class="navbar">
   <a href="/" class="active">Home</a>
