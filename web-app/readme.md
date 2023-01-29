@@ -12,7 +12,7 @@ OR
 bash runner.sh
 
 # IF USING NGINX Proxy Manger
-   If using NGINX reverse proxy then the bellow needs to go in "Custom Nginx Configuration" as well when editing the proxy host:
+   If using this app behind a NGINX proxy manager then the bellow needs to go in "Custom Nginx Configuration" as well when editing the proxy host:
 
     proxy_set_header        X-Real-IP       $remote_addr;
     proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
