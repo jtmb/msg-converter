@@ -65,7 +65,14 @@ html {
       height: 0px;
       width: 100%;
       }
-
+      .pic-div {
+        display: flex;
+        justify-content: center;
+        align-items: bottom;
+        height: 0px;
+        width: 100%;
+        }
+  
       h1 {
         display: flex;
         justify-content: center;
