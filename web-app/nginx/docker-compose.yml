@@ -11,18 +11,31 @@ services:
     networks:
       - internal
 
+  # mongodb:
+  #   image: mongo
+  #   restart: unless-stopped
+  #   ports: 
+  #     - "27017:27017"
+  #   networks:
+  #     - internal
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: "root"
+  #     MONGO_INITDB_ROOT_PASSWORD: "${DB_PWD}"
+  #   depends_on:
+  #     - php
 
-  db:
-    image: mongo
-    restart: unless-stopped
-    ports: 
-      - "8082:8081"
-    networks:
-      - internal
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: "root"
-      ME_CONFIG_MONGODB_ADMINPASSWORD: "${DB_PWD}"
-      
+  # mongo-express:
+  #   image: mongo-express
+  #   ports:
+  #     - 8082:8081
+  #   environment:
+  #     ME_CONFIG_MONGODB_ADMINUSERNAME: root
+  #     ME_CONFIG_MONGODB_ADMINPASSWORD: "${DB_PWD}"
+  #     ME_CONFIG_MONGODB_URL: mongodb://root:$DB_PWD@mongodb:27017/
+  #   networks:
+  #     - internal
+  #   depends_on:
+  #     - mongodb
 
   php:
     build:
@@ -31,6 +44,8 @@ services:
     restart: always
     networks:
       - internal
+    depends_on:
+      - nginx
       
 networks:
   internal:
