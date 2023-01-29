@@ -15,7 +15,7 @@ This repo contains two applications:
 
 <h1>How to run:</h1>
 
-[standalone](https://github.com/jtmb/msg-converter/blob/main/standalone/readme.md)
+[standalone](https://github.com/jtmb/msg-converter/blob/main/standalone/)
 
-[web-app](https://github.com/jtmb/msg-converter/blob/main/web-app/readme.md)
+[web-app](https://github.com/jtmb/msg-converter/blob/main/web-app/)
 
