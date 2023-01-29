@@ -11,7 +11,7 @@ OR
 
 bash runner.sh
 
-# IF USING NGINX Proxy Manger
+# IF USING NGINX Proxy Manger & Cloudflare
    If using this app behind a NGINX proxy manager and cloudflare then the bellow needs to go in "Custom Nginx Configuration" as well when editing the proxy host:
 
     proxy_set_header        X-Real-IP       $remote_addr;
