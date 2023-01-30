@@ -11,18 +11,18 @@ services:
     networks:
       - internal
 
-  # mongodb:
-  #   image: mongo
-  #   restart: unless-stopped
-  #   ports: 
-  #     - "27017:27017"
-  #   networks:
-  #     - internal
-  #   environment:
-  #     MONGO_INITDB_ROOT_USERNAME: "root"
-  #     MONGO_INITDB_ROOT_PASSWORD: "${DB_PWD}"
-  #   depends_on:
-  #     - php
+  mongodb:
+    image: mongo
+    restart: unless-stopped
+    ports: 
+      - "27017:27017"
+    networks:
+      - internal
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "root"
+      MONGO_INITDB_ROOT_PASSWORD: "${DB_PWD}"
+    depends_on:
+      - php
 
   # mongo-express:
   #   image: mongo-express
