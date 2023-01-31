@@ -28,4 +28,3 @@
 
 # cat log files
 docker exec -it msg-converter-php-1 cat /var/www/html/logs/logs.out
-
