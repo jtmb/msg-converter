@@ -13,7 +13,7 @@
         name=$(docker exec -it msg-converter-php-1 sed -n $wkln /var/www/html/logs/logs.out | cut -d"|" -f1)
         date=$(docker exec -it msg-converter-php-1 sed -n $wkln /var/www/html/logs/logs.out | cut -d "|" -f3)
         ip=$(docker exec -it msg-converter-php-1 sed -n $wkln /var/www/html/logs/logs.out | cut -d "|" -f2)
-    else
+    fi
 
     echo "--------- debug --------------"
     echo $wkln
