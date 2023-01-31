@@ -1,7 +1,12 @@
 FROM nginx:alpine
 
-# Copy configs onto webserver
-ADD default.conf /etc/nginx/conf.d
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy nginx configs into container
+ADD nginx-configs/default.conf /etc/nginx/conf.d
+COPY nginx-configs/nginx.conf /etc/nginx/nginx.conf
+
+# Copy scripts into container
 COPY scripts/entrypoint /usr/local/bin/entrypoint
+COPY .env /usr/local/bin/.env
+
+# Copy webapp into container
 COPY frontend/ /var/www/html/

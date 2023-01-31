@@ -1,11 +1,16 @@
 FROM php:fpm-alpine
 
-# # Install Python Dependencies
+# # Install Dependencies
 RUN apk add py3-pip
+RUN apk add coreutils
 RUN pip install extract-msg
-RUN adduser root www-data && chown -R www-data:www-data /var/www && chmod -R g+rwX /var/www
+
+# Copy scripts into container
 COPY scripts/entrypoint /usr/local/bin/entrypoint
 COPY frontend/ /var/www/html/
+COPY .env /usr/local/bin/.env
+
+# Run Commands
 RUN chmod 755 /usr/local/bin/entrypoint
 RUN chmod u+x /usr/local/bin/entrypoint
 CMD ["php-fpm"]
