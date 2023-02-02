@@ -11,20 +11,20 @@ services:
     networks:
       - internal
 
-  db:
-    image: "ghcr.io/linuxserver/mariadb"
-    restart: unless-stopped
-    ports: 
-      - "9092:3306"
-    networks:
-      - internal
-    environment:
-      MYSQL_USER: "root"
-      MYSQL_ROOT_PASSWORD: "${DB_PWD}"
-      MYSQL_DATABASE: "db_1"
-      MYSQL_PASSWORD: "${DB_PWD}"
-    depends_on:
-      - php
+  # db:
+  #   image: "ghcr.io/linuxserver/mariadb"
+  #   restart: unless-stopped
+  #   ports: 
+  #     - "9092:3306"
+  #   networks:
+  #     - internal
+  #   environment:
+  #     MYSQL_USER: "root"
+  #     MYSQL_ROOT_PASSWORD: "${DB_PWD}"
+  #     MYSQL_DATABASE: "db_1"
+  #     MYSQL_PASSWORD: "${DB_PWD}"
+  #   depends_on:
+  #     - php
 
   php:
     build:
