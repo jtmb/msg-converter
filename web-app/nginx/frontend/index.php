@@ -14,8 +14,6 @@
 	<title>msg converter</title>
 </head>
 <body>
-<div class='spinner-displayer'></div>
-<script src="/js/loading.js"></script>
 <div class="topnav">
   <a class="active" href="/">Home</a>
   <a href="https://github.com/jtmb/msg-converter">Repo</a>
@@ -33,9 +31,9 @@
 				<p>An open source .msg file converter 👨‍💻</p>
 				<!-- <div class="action-wrapper"> -->
 					<form action="upload.php" method="post" enctype="multipart/form-data">
-					<input type="file" name="fileToUpload" id="fileToUpload" class="cd-btn second-action"></input>
-					<input type="submit" name="submit" id="search-button" value="Upload" class="cd-btn"></form>
-					<script src="/js/loading.js"></script>
+					<input type="file" value="Upload" style="width:140px;" name="fileToUpload" class="cd-btn second-action" id="fileToUpload"></input><label for="fileToUpload" class="cd-btn second-action">Choose File</label>
+					<input type="submit" name="submit" id="search-button" value="Upload" class="cd-btn"><label for="search-button"  class="cd-btn">Upload</label></form>
+					
 					<p></p>
 					<p></p>
 					<p></p>

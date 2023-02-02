@@ -8,7 +8,7 @@ Primary style
 }
 
 html {
-  font-size: 100%;
+  font-size: 110%;
 }
 
 body {
@@ -1427,22 +1427,33 @@ color: white;
 .topnav-right {
 float: right;
 }
+/* ::file-selector-button {
+  display: none;
+} */
 
-.about1 {
-  margin-bottom: 150px
+input[type="file"] {
+  display: none !important;
 }
-.about2 {
-  margin-bottom: 150px
+
+input[type="submit"] {
+  display: none !important;
 }
-.about3 {
-  margin-top: 440px
+
+label {
+  background-color: #7bb9c9;
+  display: inline-block;
+  padding: 1.2em 1.4em;
+  font-size: 1.2rem;
+  color: #201f1f;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: .25em;
+  margin-right: 1em;
+  margin-top: 0.5em; 
 }
-.social {
-  position:absolute;
-  bottom:0;
-  right:0;
-  margin-right: 80px;
-}
-.fa {
-  border-radius: 50px;
+
+/* this one to add more buttons (3x) */
+label:nth-of-type(5x) {
+  margin-right: 1em;
 }
