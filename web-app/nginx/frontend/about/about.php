@@ -14,7 +14,7 @@
   <a class="active" href="/about/about.php">About</a>
   <div class="topnav-right">
     <!-- <a href="index.php">Modern View</a> -->
-    <a href="./classic/index.php">Classic View</a>
+    <a href="../classic/about.html">Classic View</a>
   </div>
 </div>
 
