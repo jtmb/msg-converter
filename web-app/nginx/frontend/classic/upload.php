@@ -9,6 +9,7 @@ $seconds = 15;
 
 // Check if file already exists or is empty
 if (file_exists($target_file)) {
+  echo $target_file;
   echo file_get_contents( "/var/www/html/classic/error/file_already_exists.html" );
   $uploadOk = 0;
 }
