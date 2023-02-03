@@ -46,7 +46,7 @@
 			</div>
 		</div>
 	</div>
-<script src="/var/www/html/js/loading.js"></script>	
+<script src="./js/loading.js"></script>	
 <script src=./js/jquery-2.1.4.js"></script>
 <script src="./js/main.js"></script> <!-- Resource jQuery -->
 </body>
