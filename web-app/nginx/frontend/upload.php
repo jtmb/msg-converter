@@ -38,12 +38,12 @@ if ($uploadOk == 0) {
     if (str_contains($output2, 'Warning: file_get_contents')) {
       echo "The string 'warning' was found in the string\n";
     } else {
+      echo file_get_contents( "/var/www/html/converted-messages/$name/message.html" ); // get the contents, and echo it out.
       // cleanup files (nothing stored)
       shell_exec('rm -rfv /var/www/html/converted-messages/'.escapeshellarg($name).'/ ');
       shell_exec('rm -rfv /var/www/html/'.escapeshellarg($target_file).'/ ');
       // make logs of files converted
       shell_exec('currentDate=`date` && echo "'.escapeshellarg($target_file).' | '.escapeshellarg($ipaddress).' | $currentDate" >> logs/logs.out');
-      echo file_get_contents( "/var/www/html/converted-messages/$name/message.html" ); // get the contents, and echo it out.
     }
 
 
