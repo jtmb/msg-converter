@@ -91,7 +91,7 @@ General Style
   background-color: #c1cbcf;
   border-radius: .25em;
   margin-right: 1em;
-  margin-top: 0.5em; 
+  margin-top: 0.5em;
 }
 /* this one to add more buttons (3x) */
 .cd-btn:nth-of-type(5x) {
@@ -111,8 +111,38 @@ General Style
   letter-spacing: 1px;
   border-radius: .25em;
   margin-right: 1em;
+  margin-top: 0.5em;
+}
+
+input[type="file"] {
+  display: none !important;
+}
+
+input[type="submit"] {
+  display: none !important;
+}
+
+label {
+  background-color: #7bb9c9;
+  display: inline-block;
+  padding: 1.2em 1.4em;
+  font-size: 1.2rem;
+  color: #201f1f;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: .25em;
+  margin-right: 1em;
   margin-top: 0.5em; 
 }
+
+.cd-btn:hover{
+  background-color: rgb(213, 204, 204);
+  color: rgb(12, 12, 12)
+
+}
+
+/* END BUTTONS */
 
 .cd-intro-content h1,
 .cd-intro-content h1 span,
@@ -1427,33 +1457,7 @@ color: white;
 .topnav-right {
 float: right;
 }
+
 /* ::file-selector-button {
   display: none;
 } */
-
-input[type="file"] {
-  display: none !important;
-}
-
-input[type="submit"] {
-  display: none !important;
-}
-
-label {
-  background-color: #7bb9c9;
-  display: inline-block;
-  padding: 1.2em 1.4em;
-  font-size: 1.2rem;
-  color: #201f1f;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
-  border-radius: .25em;
-  margin-right: 1em;
-  margin-top: 0.5em; 
-}
-
-/* this one to add more buttons (3x) */
-label:nth-of-type(5x) {
-  margin-right: 1em;
-}
