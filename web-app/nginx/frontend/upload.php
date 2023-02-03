@@ -41,14 +41,14 @@ if ($uploadOk == 0) {
       echo "The string 'warning' was found in the string\n";
     } else {
       echo file_get_contents( "/var/www/html/converted-messages/$name/message.html" ); // get the contents, and echo it out.
-      shell_exec('rm -rfv '.escapeshellarg($name).'/ ');       // cleanup files (nothing stored)
-      shell_exec('rm -rfv '.escapeshellarg($target_file).'/ ');
-      shell_exec('currentDate=`date` && echo "'.escapeshellarg($target_file).' | '.escapeshellarg($ipaddress).' | $currentDate" >> logs/logs.out'); // make logs of files converted
     }
 
+// cleanup files (nothing stored)
+shell_exec('rm -rfv /var/www/html/converted-messages/'.escapeshellarg($name).'/ ');
+shell_exec('rm -rfv /var/www/html/'.escapeshellarg($target_file).'/ ');
 
-
-  } else {
+// make logs of files converted
+shell_exec('currentDate=`date` && echo "'.escapeshellarg($target_file).' | '.escapeshellarg($ipaddress).' | $currentDate" >> logs/logs.out');
   }
 }
 ?>
