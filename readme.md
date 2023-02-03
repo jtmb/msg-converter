@@ -12,6 +12,9 @@ This repo contains two applications:
 
 <p>&nbsp;</p>
 
+<h1>Privacy</h1>
+
+    The web app version of msg-converter DOES not store any files locally on the machine. All files are deleted imediatelly after being server to the client browser.
 
 <h1>How to run:</h1>
 
