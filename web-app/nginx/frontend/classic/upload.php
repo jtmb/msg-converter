@@ -1,6 +1,6 @@
 <?php
 // echo file_get_contents( "/var/www/html/msg-template.php" ); // get the contents, and echo it out.
-$target_dir = "uploads/";
+$target_dir = "classic/uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $FileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -9,19 +9,19 @@ $seconds = 15;
 
 // Check if file already exists or is empty
 if (file_exists($target_file)) {
-  echo file_get_contents( "/var/www/html/error/file_already_exists.html" );
+  echo file_get_contents( "/var/www/html/classic/error/file_already_exists.html" );
   $uploadOk = 0;
 }
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 5000000) {
-  echo file_get_contents( "/var/www/html/error/file_too_big.html" );
+  echo file_get_contents( "/var/www/html/classic/error/file_too_big.html" );
   $uploadOk = 0;
 }
 
 // Allow certain file formats
 if($FileType != "msg" && $FileType != "") {
-  echo file_get_contents( "/var/www/html/error/wrong_file_type.html" );
+  echo file_get_contents( "/var/www/html/classic/error/wrong_file_type.html" );
   $uploadOk = 0;
 }
 
