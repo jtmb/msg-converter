@@ -12,6 +12,7 @@
 
   	
 	<title>msg converter</title>
+
 </head>
 <body>
 <div class="topnav">
@@ -25,6 +26,7 @@
 </div>
 <section class="cd-intro">
 	<div class="cd-intro-content mask-2">
+	<div class='spinner-displayer'></div>
 		<div class="content-wrapper">
 			<div>
 				<h1>.msg converter</h1>
@@ -32,19 +34,20 @@
 				<!-- <div class="action-wrapper"> -->
 					<form action="upload.php" method="post" enctype="multipart/form-data">
 					<input type="file" value="Upload" style="width:140px;" name="fileToUpload" class="cd-btn second-action" id="fileToUpload"></input><label for="fileToUpload" class="cd-btn second-action">Choose File</label>
-					<input type="submit" name="submit" id="search-button" value="Upload" class="cd-btn"><label for="search-button"  class="cd-btn">Upload</label>s</form>
-					
-					<p></p>
-					<p></p>
-					<p></p>
-					<p></p>
+					<input type="submit" name="submit" id="search-button" value="Upload" class="cd-btn"><label for="search-button" class="cd-btn">Upload</label></form>
+						
+	
+					<p>
+					<!-- <div class="button"><span class="button__text"></span></div> -->
+					<!-- <div class='spinner-displayer'></div> -->
 
 						  
 				</div>
 			</div>
 		</div>
 	</div>
-<script src="dev/js/jquery-2.1.4.js"></script>
-<script src="dev/js/main.js"></script> <!-- Resource jQuery -->
+<script src="./js/loading.js"></script>	
+<script src=./js/jquery-2.1.4.js"></script>
+<script src="./js/main.js"></script> <!-- Resource jQuery -->
 </body>
 </html>
