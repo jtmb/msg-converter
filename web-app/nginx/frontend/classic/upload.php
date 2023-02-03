@@ -1,6 +1,6 @@
 <?php
 // echo file_get_contents( "/var/www/html/msg-template.php" ); // get the contents, and echo it out.
-$target_dir = "/var/www/html/uploads";
+$target_dir = "../uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $FileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
