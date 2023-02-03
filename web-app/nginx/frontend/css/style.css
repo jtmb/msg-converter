@@ -139,9 +139,7 @@ label {
 .cd-btn:hover{
   background-color: rgb(213, 204, 204);
   color: rgb(12, 12, 12)
-
 }
-
 /* END BUTTONS */
 
 .cd-intro-content h1,
@@ -1461,3 +1459,43 @@ float: right;
 /* ::file-selector-button {
   display: none;
 } */
+
+.spinner-displayer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.loader {
+  display: none;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 0
+}
+
+.loading {
+  border: 2px solid #ccc;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border-top-color: #e6f6f1;
+  border-left-color:  #5e6462;
+  animation: spin 1s infinite ease-in;
+  padding: 0
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
