@@ -35,11 +35,11 @@ if ($uploadOk == 0) {
     // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
     $output = shell_exec('python3 -m extract_msg /var/www/html'.escapeshellarg($target_file).' --out /var/www/html/converted-messages/uploads/ --prepared-html --use-filename --html ');
     $name = trim($target_file,".msg!"); //trim output
-    $output2 = file_get_contents( "/var/www/html/converted-messages$name/message.html" ); // get the contents, and echo it out.
+    $output2 = file_get_contents( "/var/www/html/converted-messages/$name/message.html" ); // get the contents, and echo it out.
     if (str_contains($output2, 'Warning: file_get_contents')) {
       echo "The string 'warning' was found in the string\n";
     } else {
-      echo file_get_contents( "/var/www/html/converted-messages$name/message.html" ); // get the contents, and echo it out.
+      echo file_get_contents( "/var/www/html/converted-messages/$name/message.html" ); // get the contents, and echo it out.
     }
 
     // cleanup files (nothing stored)
