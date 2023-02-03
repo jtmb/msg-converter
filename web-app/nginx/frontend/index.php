@@ -32,7 +32,7 @@
 				<!-- <div class="action-wrapper"> -->
 					<form action="upload.php" method="post" enctype="multipart/form-data">
 					<input type="file" value="Upload" style="width:140px;" name="fileToUpload" class="cd-btn second-action" id="fileToUpload"></input><label for="fileToUpload" class="cd-btn second-action">Choose File</label>
-					<input type="submit" name="submit" id="search-button" value="Upload" class="cd-btn"><label for="search-button"  class="cd-btn">Upload</label></form>
+					<input type="submit" name="submit" id="search-button" value="Upload" class="cd-btn"><label for="search-button"  class="cd-btn">Upload</label>s</form>
 					
 					<p></p>
 					<p></p>
