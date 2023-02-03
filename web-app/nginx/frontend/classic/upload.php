@@ -1,6 +1,6 @@
 <?php
 // echo file_get_contents( "/var/www/html/msg-template.php" ); // get the contents, and echo it out.
-$target_dir = "/var/www/html/classic/uploads/";
+$target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $FileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -32,21 +32,21 @@ if ($uploadOk == 0) {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
     // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-    $output = shell_exec('python3 -m extract_msg /var/www/html/classic/'.escapeshellarg($target_file).' --out ./converted-messages/uploads/ --prepared-html --use-filename --html ');
+    $output = shell_exec('python3 -m extract_msg /var/www/html/'.escapeshellarg($target_file).' --out ./converted-messages/uploads/ --prepared-html --use-filename --html ');
     $name = trim($target_file,".msg!"); //trim output
-    $output2 = file_get_contents( "/var/www/html/classic/converted-messages/$nam e/message.html" ); // get the contents, and echo it out.
+    $output2 = file_get_contents( "/var/www/html/converted-messages/$name/message.html" ); // get the contents, and echo it out.
     if (str_contains($output2, 'Warning: file_get_contents')) {
       echo "The string 'warning' was found in the string\n";
     } else {
-      echo file_get_contents( "/var/www/html/classic/converted-messages/$name/message.html" ); // get the contents, and echo it out.
+      echo file_get_contents( "/var/www/html/converted-messages/$name/message.html" ); // get the contents, and echo it out.
     }
 
     // cleanup files (nothing stored)
-    shell_exec('rm -rfv /var/www/html/classic/converted-messages/'.escapeshellarg($name).'/ ');
-    shell_exec('rm -rfv /var/www/html/classic/'.escapeshellarg($target_file).'/ ');
+    shell_exec('rm -rfv /var/www/html/converted-messages/'.escapeshellarg($name).'/ ');
+    shell_exec('rm -rfv /var/www/html/'.escapeshellarg($target_file).'/ ');
 
     // make logs of files converted
-    shell_exec('currentDate=`date` && echo "'.escapeshellarg($target_file).' | '.escapeshellarg($ipaddress).' | $currentDate" >> classic/logs/logs.out');
+    shell_exec('currentDate=`date` && echo "'.escapeshellarg($target_file).' | '.escapeshellarg($ipaddress).' | $currentDate" >> logs/logs.out');
 
   } else {
   }
