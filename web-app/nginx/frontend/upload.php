@@ -6,7 +6,6 @@ $uploadOk = 1;
 $FileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 $ipaddress = getenv("REMOTE_ADDR") ;
 $seconds = 15;
-$name = trim($target_file,".msg!"); //trim output
 
 // Check if file already exists or is empty
 if (file_exists($target_file)) {
@@ -33,16 +32,13 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-
     // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
     $output = shell_exec('python3 -m extract_msg /var/www/html/'.escapeshellarg($target_file).' --out ./converted-messages/uploads/ --prepared-html --use-filename --html ');
-    $output2 = file_get_contents( "/var/www/html/converted-messages/$name/message.html" ); // get the contents, and echo it out.
-    // cleanup files (nothing stored)
-    shell_exec('rm -rfv /var/www/html/converted-messages/'.escapeshellarg($name).'/ ');
+    $name = trim($target_file,".msg!"); //trim output
+    echo file_get_contents( "/var/www/html/converted-messages/$name/message.html" ); // get the contents, and echo it out.
+    shell_exec('rm -rfv /var/www/html/converted-messages/'.escapeshellarg($name).'/ ');       // cleanup files (nothing stored)
     shell_exec('rm -rfv /var/www/html/'.escapeshellarg($target_file).'/ ');
-
-    // make logs of files converted
-    shell_exec('currentDate=`date` && echo "'.escapeshellarg($target_file).' | '.escapeshellarg($ipaddress).' | $currentDate" >> logs/logs.out');
-  }
+    shell_exec('currentDate=`date` && echo "'.escapeshellarg($target_file).' | '.escapeshellarg($ipaddress).' | $currentDate" >> logs/logs.out'); // make logs of files converted
+    }
 }
 ?>
