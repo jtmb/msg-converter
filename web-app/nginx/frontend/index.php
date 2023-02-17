@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
+<script src=
+"https://code.jquery.com/jquery-1.12.4.min.js">
+</script>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,8 +39,14 @@
 					<form action="upload.php" method="post" enctype="multipart/form-data">
 					<input type="file" value="Upload" style="width:140px;" name="fileToUpload" class="cd-btn second-action" id="fileToUpload"></input><label for="fileToUpload" class="cd-btn second-action">Choose File</label>
 					<input type="submit" name="submit" id="search-button" value="Upload" class="cd-btn"><label for="search-button" class="cd-btn">Upload</label></form>
-						
-	
+					<script>
+						$(document).ready(function(){
+							$('input[type="file"]').change(function(e){
+								var fileToUpload = e.target.files[0].name;
+								alert(fileToUpload + ' is the selected file .');
+							});
+						});
+					</script>
 					<p>
 					<!-- <div class="button"><span class="button__text"></span></div> -->
 					<!-- <div class='spinner-displayer'></div> -->
