@@ -30,7 +30,9 @@
 </div>
 <section class="cd-intro">
 	<div class="cd-intro-content mask-2">
-	<div class='spinner-displayer'></div>
+	<div class='spinner-displayer'></p></div><div class='loading-txt'><p id='root'></p></div>
+	
+	
 		<div class="content-wrapper">
 			<div>
 				<h1>.msg converter</h1>
@@ -38,7 +40,7 @@
 				<!-- <div class="action-wrapper"> -->
 					<form action="upload.php" method="post" enctype="multipart/form-data">
 					<input type="file" value="Upload" style="width:140px;" name="fileToUpload" class="cd-btn second-action" id="fileToUpload"></input><label for="fileToUpload" class="cd-btn second-action">Choose File</label>
-					<input type="submit" name="submit" id="search-button" value="Upload" class="cd-btn"><label for="search-button" class="cd-btn">Upload</label></form>
+					<input type="submit" onclick="document.getElementById('root').innerHTML = 'Loading ...'" name="submit" id="search-button" value="Upload" class="cd-btn"><label for="search-button" class="cd-btn">Upload</label></form>
 					<script>
 						$(document).ready(function(){
 							$('input[type="file"]').change(function(e){
