@@ -1461,9 +1461,11 @@ float: right;
 } */
 
 .spinner-displayer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 11%;
+  left: 4%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 0;
 }
 
 * {
@@ -1477,18 +1479,19 @@ float: right;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
-  padding: 0
+  padding: 0;
 }
 
 .loading {
+  float: right;
   border: 2px solid #ccc;
-  width: 120px;
-  height: 120px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border-top-color: #e6f6f1;
   border-left-color:  #5e6462;
   animation: spin 1s infinite ease-in;
-  padding: 0
+  padding: 0;
 }
 
 @keyframes spin {
@@ -1498,4 +1501,10 @@ float: right;
   100% {
       transform: rotate(360deg);
   }
+}
+
+.loading-txt {
+  top: 8%;
+  left:8%;
+  position: absolute;
 }
