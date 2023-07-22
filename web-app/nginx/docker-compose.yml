@@ -1,7 +1,7 @@
 version: "3"
 services:
 
-  nginx:
+  nginx-msg-converter:
     build:
       context: .
       dockerfile: dockerfile
@@ -26,7 +26,7 @@ services:
   #   depends_on:
   #     - php
 
-  php:
+  php-msg-converter:
     build:
       context: .
       dockerfile: dockerfile-php
