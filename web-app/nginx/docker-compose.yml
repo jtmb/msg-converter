@@ -9,31 +9,12 @@ services:
     restart: always
     ports: 
       - "8085:80"
-    networks:
-      - internal
-
-  # db:
-  #   image: "ghcr.io/linuxserver/mariadb"
-  #   restart: unless-stopped
-  #   ports: 
-  #     - "9092:3306"
-  #   networks:
-  #     - internal
-  #   environment:
-  #     MYSQL_USER: "root"
-  #     MYSQL_ROOT_PASSWORD: "${DB_PWD}"
-  #     MYSQL_DATABASE: "db_1"
-  #     MYSQL_PASSWORD: "${DB_PWD}"
-  #   depends_on:
-  #     - php
-
+      
   php-msg-converter:
     image: php:fpm-alpine
     build:
       context: .
       dockerfile: dockerfile-php
     restart: always
-    networks:
-      - internal
     depends_on:
       - nginx
