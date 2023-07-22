@@ -2,6 +2,7 @@ version: "3"
 services:
 
   nginx-msg-converter:
+    image: nginx:alpine
     build:
       context: .
       dockerfile: dockerfile
@@ -27,6 +28,7 @@ services:
   #     - php
 
   php-msg-converter:
+    image: php:fpm-alpine
     build:
       context: .
       dockerfile: dockerfile-php
