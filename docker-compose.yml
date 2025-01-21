@@ -1,0 +1,14 @@
+services:
+  msg-converter:
+    build: .
+    container_name: msg-converter
+    volumes:
+      - ./msg-files:/app/msg-files
+      - ./converted-messages:/app/converted-messages
+    environment:
+      # Single file conversion:
+      # - msg_path=/app/msg-files/single_test_msg.msg
+      # Directory conversion:
+      - msg_dir=/app/msg-files
+    stdin_open: true
+    tty: true
