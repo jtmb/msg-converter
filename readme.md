@@ -21,7 +21,7 @@
 - [Prerequisites](#prerequisites)
 - [Running on Docker Compose](#running-on-docker-compose)
 - [Enviorment Variables Explained](#environment-variables-explained)
-- [Getting Started](#getting-started)
+- [Getting Started (non-docker)](#getting-started-non-docker)
     - [Usage](#usage)
     - [Options](#options)
 - [Contributing](#contributing)
@@ -50,8 +50,7 @@
 
 ## Prerequisites
 
-- **Bash**: Ensure you have Bash installed on your system (version 4.0 or higher).
-- **Required Tools**: Install any required tools (e.g., `ffmpeg` for media files, `convert` for image files).
+- **Docker**: Ensure you have Docker installed on your system.
 
 
 ### Running on Docker Compose  
@@ -88,6 +87,12 @@ services:
   - Maps the host directory `./converted-messages` to the container directory `/app/converted-messages`, where the converted messages will be stored.
 
 
+
+
+---
+
+## Getting Started (non-docker)
+
 ### Installation of Dependencies
 
 ```bash
@@ -97,10 +102,6 @@ sudo apt update && sudo apt install ffmpeg -y
 # Install ImageMagick (example for Ubuntu):
 sudo apt install imagemagick -y
 ```
-
----
-
-## Getting Started
 
 ### Usage
 
