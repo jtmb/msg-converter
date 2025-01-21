@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/your-repo">
-    <img src="https://via.placeholder.com/150" alt="Logo" width="" height="125">
+    <img src="https://www.freeiconspng.com/thumbs/email-icon/email-icon--endless-icons-20.png" alt="Logo" width="" height="">
   </a>
 </h1>
 
@@ -19,6 +19,8 @@
 - [About](#about)
 - [Features](#features)
 - [Prerequisites](#prerequisites)
+- [Running on Docker Compose](#running-on-docker-compose)
+- [Enviorment Variables Explained](#environment-variables-explained)
 - [Getting Started](#getting-started)
     - [Usage](#usage)
     - [Options](#options)
@@ -50,6 +52,41 @@
 
 - **Bash**: Ensure you have Bash installed on your system (version 4.0 or higher).
 - **Required Tools**: Install any required tools (e.g., `ffmpeg` for media files, `convert` for image files).
+
+
+### Running on Docker Compose  
+Run on Docker Compose (this is the recommended way) by running the command "docker compose up -d".  
+```yaml
+services:
+  msg-converter:
+    build: .
+    container_name: msg-converter
+    volumes:
+      - ./msg-files:/app/msg-files
+      - ./converted-messages:/app/converted-messages
+    environment:
+      # Single file conversion:
+      # - msg_path=/app/msg-files/single_test_msg.msg
+      # Directory conversion:
+      - msg_dir=/app/msg-files
+    stdin_open: true
+    tty: true
+```
+
+## Environment Variables Explained  
+
+- `msg_dir: /app/msg-files`
+  - The directory path inside the container where message files are located for conversion.
+- `msg_path: /app/msg-files/single_test_msg.msg`
+  - The path for a single message file to be converted (can be uncommented for single file conversion).
+  
+## Volumes Explained  
+
+- `./msg-files:/app/msg-files`
+  - Maps the host directory `./msg-files` to the container directory `/app/msg-files`, where the input message files are located.
+- `./converted-messages:/app/converted-messages`
+  - Maps the host directory `./converted-messages` to the container directory `/app/converted-messages`, where the converted messages will be stored.
+
 
 ### Installation of Dependencies
 
